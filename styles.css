@@ -1,0 +1,451 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Alex+Brush&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #3f2d22;
+    color: #e0cca9;
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.main-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Hero Banner */
+.hero {
+    width: 100%;
+    height: 98vh;
+    background: linear-gradient(180deg, rgba(203, 148, 160, 0.56) 0%, rgba(162, 130, 112, 0.46) 100%), 
+                url('Mar.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    padding: 10px 12px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    max-width: 400px;
+    height: 180px;
+    overflow: hidden;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+}
+
+.hero-logo {
+    width: 75%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    transform: translateY(0) translateX(0);
+}
+
+/* Contenedor principal con espacio acortado */
+.container {
+    width: 90%;
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+    padding-top: 40px;
+    padding-bottom: 100px;
+    z-index: 1;
+}
+
+.top-editorial-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.top-editorial-desc {
+    width: 100%;
+    font-size: 0.85rem;
+    color: #e0cca9;
+    line-height: 1.9;
+    text-align: justify;
+    font-weight: 300;
+}
+
+/* 4 imágenes en fila horizontal */
+.quad-images-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    margin: 5px 0;
+}
+
+.quad-image-card {
+    flex: 1;
+    height: 145px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* SECCIÓN DE TABS */
+.tabs-container {
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+.tabs-header {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-between;
+    position: relative;
+    z-index: 20;
+}
+
+.tab-btn {
+    flex: 1;
+    background-color: #EC9C9D;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #443025;
+    padding: 14px 6px;
+    border-radius: 18px 18px 0 0;
+    font-size: 1.5rem;
+    font-family: 'Alex Brush', cursive;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.85;
+    position: relative;
+    outline: none;
+    user-select: none;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 -3px 6px rgba(0,0,0,0.15);
+}
+
+.tab-btn:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+    background-color: #f2aeaf;
+}
+
+.tab-btn.active {
+    opacity: 1;
+    background-color: #E8CFCF;
+    color: #3f2d22;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-bottom: none;
+    font-weight: bold;
+    transform: translateY(-2px);
+    box-shadow: 0 -6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.tab-content-panel {
+    background: rgba(63, 45, 34, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-top: 3px solid #5a3d2b;
+    border-radius: 0 0 20px 20px;
+    padding: 28px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    backdrop-filter: blur(8px);
+    position: relative;
+    z-index: 5;
+    margin-top: -1px;
+}
+
+.tab-pane {
+    display: none;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+
+.tab-pane.active {
+    display: flex;
+    animation: slideFadeIn 0.35s ease forwards;
+}
+
+@keyframes slideFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-text {
+    flex: 1.2;
+}
+
+.card-text h3 {
+    color: #e0cca9;
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+    font-family: 'Alex Brush', cursive;
+    font-weight: normal;
+}
+
+.card-text p {
+    font-size: 0.8rem;
+    color: #e0cca9;
+    line-height: 1.85;
+    text-align: justify;
+    font-weight: 300;
+    margin-bottom: 12px;
+}
+
+/* SECCIÓN COLORIMETRÍA */
+.colorimetria-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+}
+
+.colorimetria-container h3 {
+    font-family: 'Alex Brush', cursive;
+    font-size: 2.6rem;
+    font-weight: normal;
+    color: #e0cca9;
+}
+
+.colorimetria-media {
+    width: 100%;
+    max-width: 550px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 18px;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* SECCIÓN NUESTRO EQUIPO */
+.equipo-vertical-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+}
+
+.equipo-vertical-container h3 {
+    font-family: 'Alex Brush', cursive;
+    font-size: 2.6rem;
+    font-weight: normal;
+    color: #e0cca9;
+}
+
+.equipo-horizontal-media {
+    width: 100%;
+    max-width: 550px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 18px;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.equipo-vertical-container p {
+    font-size: 0.85rem;
+    color: #e0cca9;
+    line-height: 1.9;
+    text-align: center;
+    font-weight: 300;
+    max-width: 500px;
+    margin-top: 4px;
+}
+
+/* Footer y Animación Llamativa exclusiva para el título de abajo (que ahora es un enlace) */
+.brand-bottom-section {
+    width: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.85) 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 70px 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.brand-bottom-container {
+    width: 100%;
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+@keyframes efectoLlamativoFooter {
+    0% {
+        transform: scale(1);
+        color: #ed8ea2;
+        text-shadow: 0 0 5px rgba(237, 142, 162, 0.4);
+    }
+    50% {
+        transform: scale(1.15);
+        color: #ffffff;
+        text-shadow: 0 0 18px rgba(255, 255, 255, 0.9);
+    }
+    100% {
+        transform: scale(1);
+        color: #ed8ea2;
+        text-shadow: 0 0 5px rgba(237, 142, 162, 0.4);
+    }
+}
+
+.brand-logo-link {
+    text-decoration: none;
+    display: inline-block !important;
+    animation: efectoLlamativoFooter 1.8s infinite ease-in-out !important;
+    transform-origin: center center;
+}
+
+.brand-logo-text {
+    font-family: 'Alex Brush', cursive;
+    font-size: 2.2rem;
+    font-weight: normal;
+    color: inherit;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 8px;
+}
+
+.footer-link {
+    color: #ed8ea2;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(232, 207, 207, 0.6);
+    transform: translateY(-2px);
+}
+
+.brand-slogan {
+    font-size: 0.9rem;
+    color: #e0cca9;
+    font-weight: 300;
+    max-width: 500px;
+    line-height: 1.75;
+    font-style: italic;
+}
+
+.copyright {
+    margin-top: 15px;
+    font-size: 0.65rem;
+    color: rgba(224, 204, 169, 0.6);
+}
+
+/* Botón flotante */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 48px;
+    height: 48px;
+    background: #ed8ea2;
+    color: #3f2d22;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.4rem;
+    font-weight: bold;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    z-index: 99999;
+}
+
+.scroll-top-btn:hover {
+    background: #ffffff;
+    transform: translateY(-4px);
+}
+
+.scroll-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.interactive-img {
+    cursor: pointer;
+}
+
+.interactive-img:hover img {
+    transform: scale(1.04);
+    filter: brightness(1.1);
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+    display: none;
+    position: fixed;
+    z-index: 999999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.92);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.lightbox-modal img {
+    max-width: 95%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.8);
+}

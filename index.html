@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Atlas A.S</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="main-wrapper">
+        <header class="hero">
+            <div class="hero-card">
+                <img src="Logo.png" alt="Private Atlas A.S Logo" class="hero-logo" onerror="this.style.display='none';">
+            </div>
+        </header>
+
+        <div class="container">
+            <section class="top-editorial-section" id="nosotros">
+                <!-- Se eliminó el título de arriba y solo queda la descripción -->
+                <div class="top-editorial-desc">
+                    
+                </div>
+            </section>
+
+            <div class="quad-images-container">
+                <div class="quad-image-card interactive-img"><img src="53493.jpg" alt="Globo terráqueo"></div>
+                <div class="quad-image-card interactive-img"><img src="53197.jpg" alt="Maletas"></div>
+                <div class="quad-image-card interactive-img"><img src="53201.jpg" alt="Arte"></div>
+                <div class="quad-image-card interactive-img"><img src="53508.jpg" alt="Mapa"></div>
+            </div>
+
+            <section class="tabs-container" id="proposito">
+                <div class="tabs-header">
+                    <button type="button" class="tab-btn active" onclick="switchTab('mision', this)">Misión</button>
+                    <button type="button" class="tab-btn" onclick="switchTab('vision', this)">Visión</button>
+                    <button type="button" class="tab-btn" onclick="switchTab('valores', this)">Valores</button>
+                </div>
+
+                <div class="tab-content-panel">
+                    <div id="mision" class="tab-pane active">
+                        <div class="card-text" style="flex: 1;">
+                            <h3>Misión</h3>
+                            <p>Desarrollar una plataforma digital eficiente e innovadora que permita a los usuarios plasmar de forma segura sus momentos más emblemáticos, planificar y gestionar sus viajes tanto nacionales como internacionales de manera organizada, segura y personalizada, integrando herramientas tecnológicas que optimicen la creación de itinerarios interactivos y mejoren la experiencia del usuario, garantizando la privacidad, la autonomía y la calidad en cada momento.</p>
+                        </div>
+                    </div>
+
+                    <div id="vision" class="tab-pane">
+                        <div class="card-text" style="flex: 1;">
+                            <h3>Visión</h3>
+                            <p>Para el año 2036 proyectamos convertirnos en la página web de viaje número uno para quienes buscan explorar el mundo con propósito. Aspiramos a ser líderes en diarios de ruta personalizados, buscamos mejorar la gestión de sus viajes y el seguimiento de sus momentos para que gocen de un viaje cómodo y seguro.</p>
+                        </div>
+                    </div>
+
+                    <div id="valores" class="tab-pane">
+                        <div class="card-text" style="flex: 1;">
+                            <h3>Valores</h3>
+                            <p><strong>Responsabilidad:</strong> Nos comprometemos con total responsabilidad a dar soluciones eficientes a las problemáticas reales que puedan llegar a surgir en la comunidad de viajes mediante un adecuado desarrollo en nuestra página web.</p>
+                            <p><strong>Trabajo en equipo:</strong> Promovemos un ambiente de trabajo unificado que constantemente busca innovar sus técnicas de trabajo para una mejor eficiencia tanto laboral como en las relaciones personales de nuestro equipo.</p>
+                            <p><strong>Innovación:</strong> Empleamos herramientas digitales modernas según lo que cubra las necesidades del entorno, innovando de la mano con el avance tecnológico.</p>
+                            <p><strong>Transparencia:</strong> Promovemos la confianza con nuestros usuarios al ser claros y veraces con la información proporcionada tanto en nuestras redes de comunicación como en el sitio web.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN COLORIMETRÍA -->
+            <section class="colorimetria-container">
+                <h3>Colorimetría</h3>
+                <div class="colorimetria-media interactive-img" id="openColorimetriaLightbox">
+                    <img src="equipo.png" alt="Colorimetría" onerror="this.src='equipo.png';"
+                </div>
+            </section>
+
+            <!-- SECCIÓN NUESTRO EQUIPO -->
+            <section class="equipo-vertical-container" id="equipo">
+                <h3>Nuestro Equipo</h3>
+                <div class="equipo-horizontal-media interactive-img" id="openLightbox">
+                    <img src="Postal.jpg" alt="Nuestro Equipo">
+                </div>
+                <p>Somos un grupo enfocado en unir el diseño editorial con la tecnología. Trabajamos juntos para transformar cada itinerario en una experiencia visual única e inolvidable.</p>
+            </section>
+        </div>
+
+        <footer class="brand-bottom-section">
+            <div class="brand-bottom-container">
+                <!-- Título del footer convertido en ENLACE con la ANIMACIÓN LLAMATIVA -->
+                <a href="https://ale94d.github.io/Private_Atlas_A.S/" target="_blank" class="brand-logo-link">
+                    <h3 class="brand-logo-text">Private Atlas A.S</h3>
+                </a>
+                
+                <nav class="footer-nav">
+                    <a href="#nosotros" class="footer-link">Nosotros</a>
+                    <a href="#proposito" class="footer-link">Propósito</a>
+                    <a href="#equipo" class="footer-link">Equipo</a>
+                </nav>
+                <p class="brand-slogan">"Tus recuerdos viajan contigo"</p>
+                <p class="copyright">© 2026 Private Atlas A.S. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modal Lightbox -->
+    <div class="lightbox-modal" id="lightboxModal">
+        <img src="" alt="Vista ampliada">
+    </div>
+
+    <button type="button" class="scroll-top-btn" id="scrollTopBtn" title="Volver arriba">↑</button>
+
+    <script>
+        function switchTab(targetId, btnElement) {
+            document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+
+            const targetPane = document.getElementById(targetId);
+            if (targetPane) {
+                targetPane.classList.add('active');
+            }
+            btnElement.classList.add('active');
+        }
+
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 200) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        const lightboxModal = document.getElementById('lightboxModal');
+        const modalImg = lightboxModal.querySelector('img');
+
+        const openColorimetriaLightbox = document.getElementById('openColorimetriaLightbox');
+        const openLightbox = document.getElementById('openLightbox');
+
+        if (openColorimetriaLightbox && lightboxModal) {
+            openColorimetriaLightbox.addEventListener('click', function () {
+                const img = this.querySelector('img');
+                if (img && modalImg) {
+                    modalImg.src = img.src;
+                    lightboxModal.style.display = 'flex';
+                }
+            });
+        }
+
+        if (openLightbox && lightboxModal) {
+            openLightbox.addEventListener('click', function () {
+                const img = this.querySelector('img');
+                if (img && modalImg) {
+                    modalImg.src = img.src;
+                    lightboxModal.style.display = 'flex';
+                }
+            });
+        }
+
+        lightboxModal.addEventListener('click', function () {
+            lightboxModal.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
